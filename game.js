@@ -1,4 +1,5 @@
 $(document).ready(function() {
+	initialize();
 	generate(1);
 	generate(2);
 	setInterval('move();', 5);
@@ -22,4 +23,10 @@ function move() {
 		var newLeft = parseInt($(this).css("left")) - 1;
 		$(this).css("left", newLeft + "px");
 	});
+}
+
+function initialize(lanes) {
+	if(screen.width > screen.height) {
+		alert('Success');
+	}
 }

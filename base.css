@@ -1,0 +1,21 @@
+body {
+	margin: 0;
+}
+
+div#container {
+	height: 100px;
+	width: 450px;
+}
+
+div.track {
+	height: 100%;
+	width: 100%;
+	border:1px black solid;
+	border-width: 1px 0;
+}
+
+div.obstacle {
+	width: 10px;
+	background-color: red;
+	position: absolute;
+}

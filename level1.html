@@ -4,7 +4,10 @@
 	<link rel="stylesheet" href="base.css">
 
 	<script src="https://cdn.jsdelivr.net/jquery/3.0.0-beta1/jquery.min.js"></script>
-	<script>var lanes = 2;</script>
+	<script>
+	$lanes = 2;
+	$tickLength = 5;
+	</script>
 	<script src="game.js"></script>
 </head>
 <body>
@@ -14,14 +17,16 @@
 
 <div id="container">
 	<div id="ui">
-
+		<!-- UI Bar -->
 	</div>
 	<div class="track" id="t1">
-
+	<!-- Track 1 -->
 	</div>
 	<div class="track" id="t2">
-
+		<!-- Track 1 -->
 	</div>
 </div>
+<h2 id="portError">You are holding your phone in portrait mode.<br>
+For the best experience playing our game, please hold your phone in landscape mode.</h2>
 </body>
 </html>

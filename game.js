@@ -16,6 +16,14 @@ function generate(track) {
 	$(trackId).append(block);
 }
 
+function generateSprite(track) {
+    var randomPosition = Math.random() * 210 + 10;
+    var trackId = "#t" + track;
+    var sprite = $('<img src="circle.png" id="circle">');
+    sprite.css({"left": randomPosition + "px"});
+    $(trackId).append(sprite);
+}
+
 function move() {
 	var blocks = $(".obstacle");
 

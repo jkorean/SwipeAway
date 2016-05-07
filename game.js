@@ -1,9 +1,11 @@
-$(document).ready(function() {
-	initialize();
-	generate(1);
-	generate(2);
-	setInterval('move();', 5);
-	
+$(document).ready(function () {
+    initialize();
+    generate(1);
+    generate(2);
+    generateSprite(1);
+    generateSprite(2);
+    setInterval('move();', 5);
+
 });
 
 function generate(track) {

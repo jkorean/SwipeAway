@@ -2,6 +2,9 @@ $(document).ready(function() {
 	initialize();
 	generate(1);
 	generate(2);
+	$('div.obstacle').on("click", function() {
+	alert("Yay");
+});
 	setInterval('move();', $tickLength);
 	
 });
@@ -26,7 +29,7 @@ function generate(track) {
 // **PENDING** Checks all obstacles to see if they have collided with an object.
 function move() {
 	$blocks = $(".obstacle");
-	$offLeft = parseInt($("div#container").css("margin-left")) - 10;
+	$offLeft = parseInt($("div#container").css("margin-left")) - 20;
 
 	$blocks.each(function() {
 		$newLeft = parseInt($(this).css("left")) - 1;
@@ -41,7 +44,7 @@ function move() {
 
 // Sets up appropriate game screen depending on screen size.
 function initialize() {
-	$("p#portError").hide();
+	$("h2#portError").hide();
 	// Sets up screen for phones or small devices.
 	if (screen.height <= 800 && screen.width <= 800) {
 		$("div#desktop").hide();
@@ -69,5 +72,9 @@ function initialize() {
 	$("div#ui").css("height", (0.075 * $height) - 2 + "px");
 	$game = $height - $("div#ui").height() - 2;
 	$laneHeight = ($game / $lanes) - 2;
-	$("div.track").css({"height": $laneHeight, "width": $width});
+	$("div.track").css({"height": $laneHeight + "px", "width": $width});
 }
+
+$('div.obstacle').on("swipe", function() {
+	alert("Yay");
+});

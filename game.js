@@ -75,6 +75,6 @@ function initialize() {
 	$("div.track").css({"height": $laneHeight + "px", "width": $width});
 }
 
-$('div.obstacle').on("swipe", function() {
+$("#test").on("swipe", function() {
 	alert("Yay");
 });

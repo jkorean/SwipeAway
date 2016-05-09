@@ -35,3 +35,10 @@ div.obstacle {
 	background-color: red;
 	position: absolute;
 }
+
+#circle {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    top: 30px;
+} 

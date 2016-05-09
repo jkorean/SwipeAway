@@ -1,11 +1,9 @@
+
 $(document).ready(function() {
 	initialize();
 	generate();
-	$('div.obstacle').on("click", function() {
-	alert("Yay");
-});
-	setInterval('move();', $tickLength);
 	
+	setInterval('move();', $tickLength);
 });
 
 // Recalls intialize function if screen orientation is changed.
@@ -24,6 +22,23 @@ function generate() {
 	$block.css({"height": $trackHeight, "left": $leftInit});
 	$($trackId).append($block);
 }
+
+function generateSprites(trackNum) {
+    var randomPosition1 = Math.random() * 210 + 10;
+    var randomPosition2 = Math.random() * 210 + 10;
+    while ((randomPosition1 >= randomPosition2 - 60) && (randomPosition1 <= randomPosition2 + 60)) {
+        randomPosition1 = Math.random() * 210 + 10;
+    }
+    if (trackNum == 2) {
+        var sprite1 = $('<img src="circle.png" id="circle">');
+        var sprite2 = $('<img src="circle.png" id="circle">');
+        sprite1.css({"left": randomPosition1 + "px"});
+        $("#t1").append(sprite1);
+        sprite2.css({"left": randomPosition2 + "px"});
+        $("#t2").append(sprite2);
+    }
+}
+
 
 // Moves all obstacles by 1 pixel.
 // **PENDING** Checks all obstacles to see if they have collided with an object.

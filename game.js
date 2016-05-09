@@ -1,7 +1,6 @@
 $(document).ready(function() {
 	initialize();
-	generate(1);
-	generate(2);
+	generate();
 	$('div.obstacle').on("click", function() {
 	alert("Yay");
 });
@@ -13,8 +12,9 @@ $(document).ready(function() {
 $(window).on("orientationchange", initialize);
 
 // Generates a new obstacle off-screen, to the right.
-function generate(track) {
-	$trackId = "#t" + track;
+function generate() {
+	$track = Math.floor(Math.random() * $lanes) + 1
+	$trackId = "#t" + $track;
 	$block = $('<div></div>');
 	$block.addClass("obstacle");
 

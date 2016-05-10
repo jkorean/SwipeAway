@@ -167,7 +167,7 @@ function move() {
 	$offLeft = parseInt($("div#container").css("margin-left")) - 20;
 
 	$blocks.each(function() {
-		$newLeft = parseInt($(this).css("left")) - 1;
+		$newLeft = parseInt($(this).css("left")) - 5;
 		$(this).css("left", $newLeft + "px");
 
 		// Deletes any obstacles that have travelled to the right off screen.
@@ -178,22 +178,22 @@ function move() {
 }
 
 function collision() {
+    
+    var Element1;
+    var Element2;
 
-    var obstacle;
-    var sprite;
-        
-    //obstacle.top = $(".obstacle").offset().top;
-    //obstacle.right = $(".obstacle").offset().right;
-    //obstacle.bottom = $(".obstacle").offset().bottom;
-    obstacle = $(".obstacle").offset().left;
+    Element1.top = $("div.obstacle").offset().top;
+    Element1.left = $("div.obstacle").offset().left;
+    Element1.right = Number($("div.obstacle").offset().left) + Number($("div.obstacle").width());
+    Element1.bottom = Number($("div.obstacle").offset().top) + Number($("div.obstacle").height());
 
-    //sprite.top = $("#circle").offset().top;
-    sprite = $("#circle").offset().right;
-    //sprite.bottom = $("#circle").offset().bottom;
-    //sprite.left = $("#circle").offset().left;
+    Element2.top = $("#circle").offset().top;
+    Element2.left = $("#circle").offset().left;
+    Element2.right = Number($("#circle").offset().left) + Number($("#circle").width());
+    Element2.bottom = Number($("#circle").offset().top) + Number($("#circle").height());
 
-    if (obstacle == sprite) {
-        alert("hi");
+    if (Element1.right > Element2.left && Element1.left < Element2.right && Element1.top < Element2.bottom && Element1.bottom > Element2.top) {
+        alert("Hi");
     }
 }
 // Sets up appropriate game screen depending on screen size.

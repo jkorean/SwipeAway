@@ -1,9 +1,10 @@
 
-$(document).ready(function() {
-	initialize();
-	generate();
-	generateSprites(lane);
-	setInterval('move();', $tickLength);
+$(document).ready(function () {
+    initialize();
+    generate();
+    generateSprites(lane);
+    setInterval('move();', $tickLength);
+    collision();
 });
 
 // Recalls intialize function if screen orientation is changed.
@@ -176,6 +177,25 @@ function move() {
 	});
 }
 
+function collision() {
+
+    var obstacle;
+    var sprite;
+        
+    //obstacle.top = $(".obstacle").offset().top;
+    //obstacle.right = $(".obstacle").offset().right;
+    //obstacle.bottom = $(".obstacle").offset().bottom;
+    obstacle = $(".obstacle").offset().left;
+
+    //sprite.top = $("#circle").offset().top;
+    sprite = $("#circle").offset().right;
+    //sprite.bottom = $("#circle").offset().bottom;
+    //sprite.left = $("#circle").offset().left;
+
+    if (obstacle == sprite) {
+        alert("hi");
+    }
+}
 // Sets up appropriate game screen depending on screen size.
 function initialize() {
 	$("h2#portError").hide();
